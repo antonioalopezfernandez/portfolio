@@ -1,0 +1,127 @@
+:root {
+    --color-primario: #333;
+    --color-hover: #999;
+    --color-fondo-inicio: #fff;
+    --color-fondo-fin: #ccc;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--color-primario);
+    background: linear-gradient(135deg, var(--color-fondo-inicio), var(--color-fondo-fin));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header__photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--color-primario);
+    transition: all 0.3s;
+}
+
+.header__photo:hover {
+    border-color: var(--color-hover);
+    transform: scale(1.1);
+}
+
+.header__name {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Main */
+.main__section-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.main__section-text {
+    text-align: justify;
+}
+
+/* Footer */
+.footer__title {
+    margin-bottom: 10px;
+}
+
+.footer__contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.footer__icon {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%);
+    transition: all 0.3s;
+}
+
+.footer__icon:hover {
+    filter: invert(80%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
+    transform: scale(1.1);
+}
+
+
+.footer__copyright {
+    font-size: 0.9em;
+    color: var(--color-primario);
+    margin: 20px 0 0;
+}
+
+.footer__link {
+    color: var(--color-primario);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--color-primario);
+    transition: all 0.3s;
+}
+
+.footer__link:hover {
+    color: var(--color-hover);
+    border-color: var(--color-hover);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+    }
+
+    .footer__contact-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer__icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .header__name {
+        font-size: 1.5em;
+    }
+
+    .main__section-title {
+        font-size: 1.3em;
+    }
+}
