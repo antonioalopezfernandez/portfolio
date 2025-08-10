@@ -3,278 +3,324 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Antonio López Fernández | Portfolio</title>
+
+    <!-- SEO básico -->
+    <meta name="description"
+        content="Administrador de sistemas con 10+ años de experiencia. Azure, Microsoft 365, Linux, SAP Crystal Reports y más. Portfolio y CV imprimible." />
+    <meta name="keywords"
+        content="Administrador de sistemas, Azure, Microsoft 365, Linux, SAP Crystal Reports, Cantabria, soporte técnico, ITIL" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Antonio López Fernández | Portfolio" />
+    <meta property="og:description" content="Administrador de sistemas con 10+ años de experiencia. Portfolio y CV." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnometerminal.svg"
+        type="image/svg+xml" />
+
+    <!-- Tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnometerminal.svg"
-        type="image/svg+xml" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- JavaScript -->
+    <!-- JS -->
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
+    <div class="container" id="top">
+        <a href="#main" class="skip-link">Saltar al contenido</a>
+
+        <!-- Menú de navegación -->
+        <header class="site-nav" role="navigation" aria-label="Navegación principal">
+            <div class="site-nav__inner">
+                <a href="#top" class="brand" aria-label="Ir al inicio">Antonio</a>
+                <nav aria-label="Secciones">
+                    <ul class="menu">
+                        <li><a href="#acerca">Acerca</a></li>
+                        <li><a href="#experiencia">Experiencia</a></li>
+                        <li><a href="#educacion">Educación</a></li>
+                        <li><a href="#certificaciones">Certificaciones</a></li>
+                        <li><a href="#habilidades">Habilidades</a></li>
+                        <li><a href="#idiomas">Idiomas</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <button id="printBtn" class="button button--small" aria-label="Descargar o imprimir CV">📄 Descargar /
+                    Imprimir</button>
+            </div>
+        </header>
+
+        <!-- Header visual -->
+        <header class="header" role="banner">
             <img src="img/profile.png" alt="Foto de Antonio López Fernández" class="header__photo" loading="lazy"
                 decoding="async">
             <h1 class="header__name">Antonio López Fernández</h1>
+            <p class="header__role">Administrador de sistemas</p>
         </header>
-        <!-- Fin header -->
 
-        <!-- Main -->
-        <main class="main">
+        <main id="main" class="main" tabindex="-1">
             <!-- Acerca de mí -->
-            <section class="main__section">
+            <section id="acerca" class="main__section">
                 <h2 class="main__section-title">Acerca de mí</h2>
                 <p class="main__section-text">
-                    Administrador de sistemas, con más de 10 años de experiencia demostrable en el sector. Me considero
-                    un
-                    apasionado de las nuevas tecnologías y, actualmente, compagino mi trabajo con el estudio y obtención
-                    de
-                    certificaciones profesionales. Siempre estoy dispuesto a progresar y aprender.
+                    Administrador de sistemas con más de 10 años de experiencia demostrable en el sector. Apasionado de
+                    las nuevas
+                    tecnologías, compagino trabajo con estudio y certificaciones. Siempre dispuesto a progresar y
+                    aprender.
                 </p>
+                <div class="badges" aria-label="Tecnologías destacadas">
+                    <span class="badge" aria-label="Microsoft Azure">Azure</span>
+                    <span class="badge" aria-label="Microsoft 365">M365</span>
+                    <span class="badge" aria-label="Linux">Linux</span>
+                    <span class="badge" aria-label="JavaScript">JS</span>
+                    <span class="badge" aria-label="C#">C#</span>
+                </div>
             </section>
-            <button onclick="window.print()" class="button">
+
+            <!-- CTA secundario (móviles) -->
+            <button id="printBtnMobile" class="button button--mobile" aria-label="Descargar o imprimir CV">
                 📄 Descargar / Imprimir CV
             </button>
 
-
-            <!-- Experiencia -->
-            <section id="experiencia" class="main__section">
+            <!-- Experiencia (acordeones accesibles) -->
+            <section id="experiencia" class="main__section" aria-label="Experiencia profesional">
                 <h2 class="main__section-title">Experiencia</h2>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Analista de proyectos — Tragsatec</h3>
-                    <p class="main__section-item-meta">octubre de 2023 – Presente · Santander, Autonomía de Cantabria,
-                        España</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Analista de proyectos — Tragsatec</h3>
+                        <p class="main__section-item-meta">octubre de 2023 – Presente · Santander, Cantabria, España</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Responsable de gestionar y supervisar las actividades del
-                            contrato de prestación de servicios para el Hospital Universitario Marqués de Valdecilla.
+                        <li class="main__section-item-bullet">Gestión y supervisión del contrato de servicios para el
+                            HUMV.</li>
+                        <li class="main__section-item-bullet">Seguimiento y control de los servicios de reprografía e
+                            informática.</li>
+                    </ul>
+                </details>
+
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Programador funcional — Grupo Quiter</h3>
+                        <p class="main__section-item-meta">marzo de 2023 – octubre de 2023 (8 meses) · Santander,
+                            Cantabria, España</p>
+                    </summary>
+                    <ul class="main__section-item-list">
+                        <li class="main__section-item-bullet">Nuevas funcionalidades y corrección de incidencias para
+                            Quiter AutoWeb.</li>
+                        <li class="main__section-item-bullet">CMS Basic UniVerse de alto rendimiento.</li>
+                        <li class="main__section-item-bullet">Interfaces gráficas con Delphi.</li>
+                    </ul>
+                </details>
+
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Técnico de sistemas — INERZA S.A.</h3>
+                        <p class="main__section-item-meta">septiembre de 2022 – febrero de 2023 (6 meses) · El
+                            Astillero, Cantabria</p>
+                    </summary>
+                    <ul class="main__section-item-list">
+                        <li class="main__section-item-bullet">Migración de correo a Microsoft 365.</li>
+                        <li class="main__section-item-bullet">Apoyo en la implantación de ERP Sage X3.</li>
+                        <li class="main__section-item-bullet">Informes con SAP Crystal Reports.</li>
+                        <li class="main__section-item-bullet">Resolución de incidencias de Microsoft 365.</li>
+                    </ul>
+                </details>
+
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Ayudante de sistemas — Atento España</h3>
+                        <p class="main__section-item-meta">diciembre de 2021 – agosto de 2022 (9 meses) · Santander,
+                            Cantabria</p>
+                    </summary>
+                    <ul class="main__section-item-list">
+                        <li class="main__section-item-bullet">Preparación de equipos para teletrabajo.</li>
+                        <li class="main__section-item-bullet">Resolución remota de problemas derivados del despliegue.
                         </li>
-                        <li class="main__section-item-bullet">Seguimiento y control de los servicios (no sanitarios) de
-                            reprografía e informática.</li>
+                        <li class="main__section-item-bullet">Soporte de incidencias en plataforma.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Programador funcional — Grupo Quiter</h3>
-                    <p class="main__section-item-meta">marzo de 2023 – octubre de 2023 (8 meses) · Santander, Autonomía
-                        de Cantabria, España</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Técnico de soporte — IRIUM</h3>
+                        <p class="main__section-item-meta">noviembre de 2020 – marzo de 2021 (5 meses) · Santander
+                            (Edificio Salia)</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Desarrollo de nuevas funcionalidades y corrección de
-                            incidencias para Quiter AutoWeb.</li>
-                        <li class="main__section-item-bullet">Uso del CMS de alto rendimiento Basic UniVerse.</li>
-                        <li class="main__section-item-bullet">Despliegue de interfaces gráficas con Delphi.</li>
+                        <li class="main__section-item-bullet">Soporte técnico para Atento a través de Irium.</li>
+                        <li class="main__section-item-bullet">Preparación de equipos para teletrabajo.</li>
+                        <li class="main__section-item-bullet">Resolución remota de incidencias.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Técnico de sistemas — INERZA S.A.</h3>
-                    <p class="main__section-item-meta">septiembre de 2022 – febrero de 2023 (6 meses) · El Astillero,
-                        Autonomía de Cantabria, España</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Operador telefónico — Atento</h3>
+                        <p class="main__section-item-meta">noviembre de 2019 – marzo de 2020 (5 meses) · Santander
+                            (Edificio Salia)</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Migración del correo de un dominio antiguo a Office 365.
+                        <li class="main__section-item-bullet">CAT para Repsol/Régsiti.</li>
+                        <li class="main__section-item-bullet">Atención, cobertura y oferta proactiva a clientes.</li>
+                    </ul>
+                </details>
+
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Programador junior — CEINOR</h3>
+                        <p class="main__section-item-meta">septiembre de 2019 – noviembre de 2019 (3 meses) ·
+                            Torrelavega</p>
+                    </summary>
+                    <ul class="main__section-item-list">
+                        <li class="main__section-item-bullet">Parcheo y corrección para la aplicación GENES.</li>
+                        <li class="main__section-item-bullet">C#, VB.NET, Visual Studio y TFS.</li>
+                    </ul>
+                </details>
+
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Técnico de soporte — SDM Programas</h3>
+                        <p class="main__section-item-meta">julio de 2019 – septiembre de 2019 (3 meses) · Santander</p>
+                    </summary>
+                    <ul class="main__section-item-list">
+                        <li class="main__section-item-bullet">Incidencias de la suite SDM Programas y Diez Software.
                         </li>
-                        <li class="main__section-item-bullet">Apoyo durante la implantación del ERP Sage X3.</li>
-                        <li class="main__section-item-bullet">Parametrización y elaboración de informes en el ERP
-                            mediante SAP Crystal Reports.</li>
-                        <li class="main__section-item-bullet">Resolución de incidencias relacionadas con la suite Office
-                            365 de Microsoft.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Ayudante de sistemas — Atento España</h3>
-                    <p class="main__section-item-meta">diciembre de 2021 – agosto de 2022 (9 meses) · Santander,
-                        Autonomía de Cantabria, España</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Programador junior — SEMICROL S.L</h3>
+                        <p class="main__section-item-meta">enero de 2019 – abril de 2019 (4 meses) · Santander</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Preparación de equipos (sobremesa y portátiles) para
-                            agentes en teletrabajo.</li>
-                        <li class="main__section-item-bullet">Resolución remota de problemas derivados de la preparación
-                            de equipos.</li>
-                        <li class="main__section-item-bullet">Resolución de incidencias informáticas dentro de la
-                            plataforma.</li>
+                        <li class="main__section-item-bullet">Formación .NET y correctivo en Fundanet.</li>
+                        <li class="main__section-item-bullet">C#, Visual Studio y TFS.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Técnico de soporte — IRIUM</h3>
-                    <p class="main__section-item-meta">noviembre de 2020 – marzo de 2021 (5 meses) · Calle Albert
-                        Einstein, 22, Santander (Edificio Salia)</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Técnico de campo — LSF Informática</h3>
+                        <p class="main__section-item-meta">septiembre de 2018 – enero de 2019 (5 meses) · Santander</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Soporte técnico para Atento a través de la consultora
-                            Irium.</li>
-                        <li class="main__section-item-bullet">Preparación de equipos para agentes en teletrabajo.</li>
-                        <li class="main__section-item-bullet">Resolución remota de problemas e incidencias dentro de la
-                            plataforma.</li>
+                        <li class="main__section-item-bullet">Soporte in situ y remoto.</li>
+                        <li class="main__section-item-bullet">Formateo y limpieza de malware.</li>
+                        <li class="main__section-item-bullet">Backups y recuperación.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Operador telefónico — Atento</h3>
-                    <p class="main__section-item-meta">noviembre de 2019 – marzo de 2020 (5 meses) · Calle Albert
-                        Einstein, 22, Santander (Edificio Salia)</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Técnico de soporte — Alfa Microgés, S. A.</h3>
+                        <p class="main__section-item-meta">junio de 2015 – septiembre de 2018 (3 años 4 meses) ·
+                            Santander</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Agente del CAT (atención al cliente) para Repsol/Régsiti.
+                        <li class="main__section-item-bullet">Soluciones Wolters Kluwer (a3ERP, a3CON, a3NOM, a3ECO...).
                         </li>
-                        <li class="main__section-item-bullet">Atención de llamadas, cobertura de necesidades y oferta
-                            proactiva a clientes de mercado libre.</li>
-                    </ul>
-                </div>
-
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Programador junior — CEINOR automotive software company</h3>
-                    <p class="main__section-item-meta">septiembre de 2019 – noviembre de 2019 (3 meses) · Polígono
-                        Industrial Tanos-Viernoles, Parcela A17, Torrelavega</p>
-                    <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Programación correctiva: parches de aplicación y
-                            corrección de errores para la aplicación GENES.</li>
-                        <li class="main__section-item-bullet">Uso de C# y VB.NET, IDE Visual Studio y control de
-                            versiones TFS.</li>
-                    </ul>
-                </div>
-
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Técnico de soporte — SDM Programas</h3>
-                    <p class="main__section-item-meta">julio de 2019 – septiembre de 2019 (3 meses) · Calle Isabel
-                        Torres, 11, Santander</p>
-                    <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Atención de incidencias informáticas relacionadas con la
-                            suite de SDM Programas y Diez Software.</li>
-                    </ul>
-                </div>
-
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Programador junior — SEMICROL S.L</h3>
-                    <p class="main__section-item-meta">enero de 2019 – abril de 2019 (4 meses) · Calle Isabel Torres, 7,
-                        Santander</p>
-                    <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Curso de formación en .NET (arquitecturajava.com) y
-                            posterior incorporación al equipo de programación correctivo.</li>
-                        <li class="main__section-item-bullet">Parcheo y corrección de errores para la aplicación
-                            Fundanet.</li>
-                        <li class="main__section-item-bullet">Uso de C#, Visual Studio y TFS.</li>
-                    </ul>
-                </div>
-
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Técnico de campo — LSF Informática</h3>
-                    <p class="main__section-item-meta">septiembre de 2018 – enero de 2019 (5 meses) · Avenida Eduardo
-                        García del Rio, 39, Santander</p>
-                    <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Asistencia técnico informática in situ y remota
-                            (AMMYY/TeamViewer).</li>
-                        <li class="main__section-item-bullet">Formateo de equipos y limpieza de virus.</li>
-                        <li class="main__section-item-bullet">Copias de seguridad y recuperación de datos.</li>
-                    </ul>
-                </div>
-
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Técnico de soporte — Alfa Microgés, S. A.</h3>
-                    <p class="main__section-item-meta">junio de 2015 – septiembre de 2018 (3 años 4 meses) · Avenida de
-                        los Ciruelos, 51, Santander</p>
-                    <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Implantación y mantenimiento de soluciones Wolters Kluwer
-                            (a3ERP, a3CON, a3NOM, a3ECO...).</li>
                         <li class="main__section-item-bullet">Atención de incidencias de la suite.</li>
-                        <li class="main__section-item-bullet">Pequeños desarrollos (Java, C#, ...).</li>
+                        <li class="main__section-item-bullet">Pequeños desarrollos (Java, C#).</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Técnico de soporte — Seidor</h3>
-                    <p class="main__section-item-meta">octubre de 2013 – junio de 2015 (1 año 9 meses) · Avenida Albert
-                        Einstein, 12, Santander</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Técnico de soporte — Seidor</h3>
+                        <p class="main__section-item-meta">octubre de 2013 – junio de 2015 (1 año 9 meses) · Santander
+                        </p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Service Desk (SPOC): acceso remoto, asistencia SAP R3 y
-                            BO.</li>
-                        <li class="main__section-item-bullet">Backups con Symantec, revisión de servicios/instancias
-                            SAP, notificación y escalado de incidencias (ITIL).</li>
+                        <li class="main__section-item-bullet">Service Desk (SPOC), asistencia SAP R/3 y BO.</li>
+                        <li class="main__section-item-bullet">Backups con Symantec, revisión de instancias SAP, ITIL.
+                        </li>
                         <li class="main__section-item-bullet">Explotación de HyperV.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Programador web — Artisca</h3>
-                    <p class="main__section-item-meta">abril de 2013 – julio de 2013 (4 meses) · Calle San José, 14, 2°
-                        C, Torrelavega</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Programador web — Artisca</h3>
+                        <p class="main__section-item-meta">abril de 2013 – julio de 2013 (4 meses) · Torrelavega</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Proyecto para la fábrica Nissan con HTML, CSS, PHP y
-                            JavaScript.</li>
+                        <li class="main__section-item-bullet">Proyecto para Nissan con HTML, CSS, PHP y JavaScript.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Formación en centros de trabajo — ITM Sistemas</h3>
-                    <p class="main__section-item-meta">marzo de 2012 – junio de 2012 (4 meses) · Pol. Ind. Mies de
-                        Molladar, 7, Cartes</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">FCT — ITM Sistemas</h3>
+                        <p class="main__section-item-meta">marzo de 2012 – junio de 2012 (4 meses) · Cartes</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Prácticas del Ciclo ASIR: soporte in situ y remoto
-                            (TeamViewer), formateo y limpieza de virus.</li>
-                        <li class="main__section-item-bullet">Copias de seguridad y recuperación de datos.</li>
+                        <li class="main__section-item-bullet">Prácticas ASIR: soporte in situ y remoto, limpieza de
+                            virus.</li>
+                        <li class="main__section-item-bullet">Backups y recuperación de datos.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Técnico de soporte — GRUPO EMPRESARIAL SADISA, S.L.</h3>
-                    <p class="main__section-item-meta">julio de 2010 – septiembre de 2010 (3 meses) · Lugar Barrio La
-                        Venta, S/N, Igollo de Camargo</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Técnico de soporte — GRUPO EMPRESARIAL SADISA, S.L.</h3>
+                        <p class="main__section-item-meta">julio de 2010 – septiembre de 2010 (3 meses) · Igollo de
+                            Camargo</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Resolución de incidencias informáticas in situ para
-                            empleados.</li>
+                        <li class="main__section-item-bullet">Resolución de incidencias in situ.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Técnico de soporte — Alfa Microgés, S. A.</h3>
-                    <p class="main__section-item-meta">julio de 2009 – septiembre de 2009 (3 meses) · Avenida de los
-                        Ciruelos, 51, Santander</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Técnico de soporte — Alfa Microgés, S. A.</h3>
+                        <p class="main__section-item-meta">julio de 2009 – septiembre de 2009 (3 meses) · Santander</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Asistencia técnica in situ y por teléfono
-                            (VNC/TeamViewer).</li>
-                        <li class="main__section-item-bullet">Depuración de software escrito en COBOL (tester).</li>
+                        <li class="main__section-item-bullet">Asistencia técnica (VNC/TeamViewer) y depuración de
+                            software COBOL.</li>
                     </ul>
-                </div>
+                </details>
 
-                <div class="main__section-item">
-                    <h3 class="main__section-item-title">Técnico de soporte — Alfa Microgés, S. A.</h3>
-                    <p class="main__section-item-meta">julio de 2008 – septiembre de 2008 (3 meses) · Avenida de los
-                        Ciruelos, 51, Santander</p>
+                <details class="accordion" data-mobile-collapsible>
+                    <summary>
+                        <h3 class="main__section-item-title">Técnico de soporte — Alfa Microgés, S. A.</h3>
+                        <p class="main__section-item-meta">julio de 2008 – septiembre de 2008 (3 meses) · Santander</p>
+                    </summary>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Asistencia técnica in situ y por teléfono
-                            (VNC/TeamViewer).</li>
-                        <li class="main__section-item-bullet">Depuración de software escrito en COBOL (tester).</li>
+                        <li class="main__section-item-bullet">Asistencia técnica (VNC/TeamViewer) y depuración de
+                            software COBOL.</li>
                     </ul>
-                </div>
+                </details>
             </section>
 
             <!-- Educación -->
             <section id="educacion" class="main__section">
                 <h2 class="main__section-title">Educación</h2>
-
                 <div class="main__section-item">
                     <h3 class="main__section-item-title">CFGS Administración de Sistemas Informáticos en Red (LOE)</h3>
                     <p class="main__section-item-meta">IES Miguel Herrero Pereda · 2010 – 2012</p>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Formación técnica en administración, configuración y
-                            mantenimiento de redes y sistemas informáticos.</li>
+                        <li class="main__section-item-bullet">Administración, configuración y mantenimiento de redes y
+                            sistemas.</li>
                     </ul>
                 </div>
-
                 <div class="main__section-item">
                     <h3 class="main__section-item-title">Ingeniería en Informática (Plan 2005)</h3>
                     <p class="main__section-item-meta">Universidad de Cantabria · 2005 – 2010</p>
                     <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Estudios universitarios en ingeniería del software,
-                            arquitectura de sistemas y redes.</li>
+                        <li class="main__section-item-bullet">Ingeniería del software, arquitectura y redes.</li>
                     </ul>
                 </div>
-
                 <div class="main__section-item">
                     <h3 class="main__section-item-title">Bachiller en Ciencias de la Salud (LOGSE)</h3>
                     <p class="main__section-item-meta">Colegio Ntra. Sra. de la Paz · 2003 – 2005</p>
@@ -284,96 +330,87 @@
             <!-- Certificaciones -->
             <section id="certificaciones" class="main__section">
                 <h2 class="main__section-title">Certificaciones</h2>
-
-                <div class="main__section-item">
-                    <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">
-                            <a href="https://www.credly.com/badges/687f5a1f-b857-45bd-b1d8-034e1d33372f/public_url"
-                                target="_blank" rel="noopener noreferrer">
-                                Microsoft Certified: Azure Fundamentals
-                            </a>
-                        </li>
-                        <li class="main__section-item-bullet">
-                            <a href="https://www.credly.com/badges/307caa57-382b-4d38-aabb-f348612d7a74/linked_in_profile"
-                                target="_blank" rel="noopener noreferrer">
-                                Microsoft 365 Certified: Fundamentals
-                            </a>
-                        </li>
-                        <li class="main__section-item-bullet">
-                            <a href="https://www.lpi.org/v/LPI000460517/gk4e64wq8p" target="_blank"
-                                rel="noopener noreferrer">
-                                Linux Essentials (LE-1)
-                            </a>
-                        </li>
-                        <li class="main__section-item-bullet">
-                            <a href="https://www.lpi.org/v/LPI000460517/gk4e64wq8p" target="_blank"
-                                rel="noopener noreferrer">
-                                Web Development Essentials
-                            </a>
-                        </li>
-                        <li class="main__section-item-bullet">
-                            IFCT0109 Seguridad Informática
-                        </li>
-                    </ul>
-                </div>
+                <ul class="main__section-item-list">
+                    <li class="main__section-item-bullet">
+                        <a href="https://www.credly.com/badges/687f5a1f-b857-45bd-b1d8-034e1d33372f/public_url"
+                            target="_blank" rel="noopener noreferrer"
+                            aria-label="Abrir Microsoft Certified: Azure Fundamentals en nueva pestaña">
+                            Microsoft Certified: Azure Fundamentals
+                        </a>
+                    </li>
+                    <li class="main__section-item-bullet">
+                        <a href="https://www.credly.com/badges/307caa57-382b-4d38-aabb-f348612d7a74/linked_in_profile"
+                            target="_blank" rel="noopener noreferrer"
+                            aria-label="Abrir Microsoft 365 Certified: Fundamentals en nueva pestaña">
+                            Microsoft 365 Certified: Fundamentals
+                        </a>
+                    </li>
+                    <li class="main__section-item-bullet">
+                        <a href="https://www.lpi.org/v/LPI000460517/gk4e64wq8p" target="_blank"
+                            rel="noopener noreferrer" aria-label="Abrir Linux Essentials">
+                            Linux Essentials (LE-1)
+                        </a>
+                    </li>
+                    <li class="main__section-item-bullet">
+                        <a href="https://www.lpi.org/v/LPI000460517/gk4e64wq8p" target="_blank"
+                            rel="noopener noreferrer" aria-label="Abrir Web Development Essentials">
+                            Web Development Essentials
+                        </a>
+                    </li>
+                    <li class="main__section-item-bullet">IFCT0109 Seguridad Informática</li>
+                </ul>
             </section>
 
             <!-- Habilidades -->
             <section id="habilidades" class="main__section">
                 <h2 class="main__section-title">Habilidades</h2>
-
-                <div class="main__section-item">
-                    <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">
-                            Microsoft Azure, Microsoft 365, SAP Crystal Reports, CMS Basic UniVerse, Delphi, C#, VB.NET,
-                            HTML, CSS, JavaScript, PHP, Linux
-                        </li>
-                        <li class="main__section-item-bullet">
-                            ITIL, gestión de proyectos, soporte técnico nivel 1 y 2, administración de redes
-                        </li>
-                    </ul>
-                </div>
+                <ul class="main__section-item-list">
+                    <li class="main__section-item-bullet">
+                        Microsoft Azure, Microsoft 365, SAP Crystal Reports, CMS Basic UniVerse, Delphi, C#, VB.NET,
+                        HTML, CSS, JavaScript, PHP, Linux
+                    </li>
+                    <li class="main__section-item-bullet">
+                        ITIL, gestión de proyectos, soporte técnico nivel 1 y 2, administración de redes
+                    </li>
+                </ul>
             </section>
 
             <!-- Idiomas -->
             <section id="idiomas" class="main__section">
                 <h2 class="main__section-title">Idiomas</h2>
-
-                <div class="main__section-item">
-                    <ul class="main__section-item-list">
-                        <li class="main__section-item-bullet">Español — Nativo</li>
-                        <li class="main__section-item-bullet">Inglés — Profesional</li>
-                    </ul>
-                </div>
+                <ul class="main__section-item-list">
+                    <li class="main__section-item-bullet">Español — Nativo</li>
+                    <li class="main__section-item-bullet">Inglés — Profesional</li>
+                </ul>
             </section>
-
         </main>
-        <!-- Fin main -->
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer id="contacto" class="footer" role="contentinfo">
             <h2 class="footer__title">Contacto</h2>
-            <div class="footer__contact-links">
+            <div class="footer__contact-links" aria-label="Redes y contacto">
                 <a href="mailto:antonio.angel.lopez.fernandez@gmail.com" class="footer__contact-link"
-                    title="Enviar correo">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Correo"
-                        class="footer__icon">
+                    title="Enviar correo" aria-label="Enviar correo a Antonio">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt=""
+                        class="footer__icon" loading="lazy" decoding="async">
                     <span class="contact-text">antonio.angel.lopez.fernandez@gmail.com</span>
                 </a>
-                <a href="https://www.linkedin.com/in/antonioalopezfernandez" target="_blank"
-                    class="footer__contact-link">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"
-                        class="footer__icon">
+                <a href="https://www.linkedin.com/in/antonioalopezfernandez" target="_blank" rel="me noopener"
+                    class="footer__contact-link" aria-label="Abrir LinkedIn de Antonio en nueva pestaña">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt=""
+                        class="footer__icon" loading="lazy" decoding="async">
                     <span class="contact-text">linkedin.com/in/antonioalopezfernandez</span>
                 </a>
-                <a href="https://www.instagram.com/antonioalopezfernandez" target="_blank" class="footer__contact-link">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"
-                        class="footer__icon">
+                <a href="https://www.instagram.com/antonioalopezfernandez" target="_blank" rel="me noopener"
+                    class="footer__contact-link" aria-label="Abrir Instagram de Antonio en nueva pestaña">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt=""
+                        class="footer__icon" loading="lazy" decoding="async">
                     <span class="contact-text">instagram.com/antonioalopezfernandez</span>
                 </a>
-                <a href="https://www.facebook.com/antonioalopezfernandez" target="_blank" class="footer__contact-link">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"
-                        class="footer__icon">
+                <a href="https://www.facebook.com/antonioalopezfernandez" target="_blank" rel="me noopener"
+                    class="footer__contact-link" aria-label="Abrir Facebook de Antonio en nueva pestaña">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt=""
+                        class="footer__icon" loading="lazy" decoding="async">
                     <span class="contact-text">facebook.com/antonioalopezfernandez</span>
                 </a>
             </div>
@@ -384,8 +421,16 @@
                     class="footer__link">Licencia MIT</a>.
             </p>
         </footer>
-        <!-- Fin footer -->
     </div>
+
+    <!-- No-JS: si JS falla, el botón sigue funcionando -->
+    <noscript>
+        <style>
+            .button--mobile {
+                display: none
+            }
+        </style>
+    </noscript>
 </body>
 
 </html>

@@ -1,52 +1,38 @@
-function initSite() {
-    document.getElementById("current-year").textContent = new Date().getFullYear();
-}
+// Utilidades mínimas
+(function () {
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
 
-initSite();
+    // CTA imprimir
+    function printCV() { window.print(); }
+    const printBtn = document.getElementById('printBtn');
+    const printBtnMobile = document.getElementById('printBtnMobile');
+    if (printBtn) printBtn.addEventListener('click', printCV);
+    if (printBtnMobile) printBtnMobile.addEventListener('click', printCV);
 
-document.addEventListener("DOMContentLoaded", () => {
-    try {
-        const isSmall = window.matchMedia && window.matchMedia("(max-width: 600px)").matches;
-        if (!isSmall) return;
-        const expSection = document.querySelector("#experiencia");
-        if (!expSection) return;
-
-        // Avoid running twice
-        if (expSection.dataset.accordionized === "1") return;
-
-        const items = Array.from(expSection.querySelectorAll(".main__section-item"));
-        items.forEach(item => {
-            const titleEl = item.querySelector(".main__section-item-title");
-            const metaEl = item.querySelector(".main__section-item-meta");
-            const listEl = item.querySelector(".main__section-item-list");
-
-            if (!titleEl || !listEl) return;
-
-            const details = document.createElement("details");
-            const summary = document.createElement("summary");
-            const strong = document.createElement("strong");
-            strong.textContent = titleEl.textContent.trim();
-            summary.appendChild(strong);
-
-            if (metaEl) {
-                const sep = document.createTextNode(" — ");
-                const span = document.createElement("span");
-                span.textContent = metaEl.textContent.trim();
-                summary.appendChild(sep);
-                summary.appendChild(span);
+    // Acordeones: abiertos por defecto en escritorio, colapsados en móvil
+    const accordions = Array.from(document.querySelectorAll('details[data-mobile-collapsible]'));
+    const setAccordionMode = () => {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        accordions.forEach(d => {
+            if (isMobile) {
+                d.removeAttribute('open');
+            } else {
+                d.setAttribute('open', '');
             }
-
-            details.appendChild(summary);
-            // Move the list into details
-            details.appendChild(listEl);
-
-            // Replace original item with details
-            item.parentNode.replaceChild(details, item);
         });
+    };
+    setAccordionMode();
+    window.addEventListener('resize', setAccordionMode, { passive: true });
 
-        expSection.dataset.accordionized = "1";
-    } catch (e) {
-        // Silently ignore
-        console && console.warn && console.warn("Accordion enhancement failed:", e);
-    }
-});
+    // Mejoras de accesibilidad: teclado para summary
+    accordions.forEach(d => {
+        const s = d.querySelector('summary');
+        if (!s) return;
+        s.setAttribute('role', 'button');
+        s.setAttribute('aria-expanded', d.hasAttribute('open') ? 'true' : 'false');
+        d.addEventListener('toggle', () => {
+            s.setAttribute('aria-expanded', d.open ? 'true' : 'false');
+        });
+    });
+})();
