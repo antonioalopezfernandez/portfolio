@@ -1,12 +1,32 @@
+/* ===========================
+   Variables y ajustes globales
+   =========================== */
 :root {
     --color-primario: #333;
     --color-hover: #999;
     --color-fondo-inicio: #fff;
     --color-fondo-fin: #ccc;
+
+    /* Tipografía fluida */
+    --font-step--1: clamp(0.85rem, 0.78rem + 0.2vw, 0.95rem);
+    --font-step-0: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --font-step-1: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+    --font-step-2: clamp(1.5rem, 1.1rem + 1.8vw, 2rem);
 }
 
+/* Reset suave + box sizing coherente */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ===========================
+   Base
+   =========================== */
 body {
     font-family: Arial, sans-serif;
+    font-size: var(--font-step-0);
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -16,8 +36,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
+img,
+svg,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+/* Contenedor principal */
 .container {
     max-width: 800px;
     width: 100%;
@@ -26,17 +57,21 @@ body {
     background: rgba(255, 255, 255, 0.8);
     text-align: center;
     box-sizing: border-box;
+    border-radius: 12px;
+    backdrop-filter: saturate(120%) blur(2px);
 }
 
-/* Header */
+/* ===========================
+   Header
+   =========================== */
 .header__photo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
     border: 3px solid var(--color-primario);
-    transition: all 0.3s;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
 .header__photo:hover {
@@ -46,10 +81,12 @@ body {
 
 .header__name {
     margin: 0;
-    font-size: 2em;
+    font-size: var(--font-step-2);
 }
 
-/* Main */
+/* ===========================
+   Main / Secciones
+   =========================== */
 .main__section {
     padding: 1.5rem 0;
     border-top: 1px solid var(--color-hover);
@@ -61,42 +98,47 @@ body {
 }
 
 .main__section-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: var(--font-step-1);
+    margin: 0 0 10px;
     text-align: center;
 }
 
 .main__section-text {
     text-align: justify;
+    text-justify: inter-word;
 }
 
-/* Experiencia */
+/* Experiencia / Ítems genéricos de sección */
 .main__section-item {
     margin-bottom: 1.5rem;
 }
 
 .main__section-item-title {
-    font-size: 1.1em;
+    font-size: var(--font-step-0);
     font-weight: bold;
-    margin-bottom: 0.3rem;
+    margin: 0 0 0.3rem;
 }
 
 .main__section-item-meta {
-    font-size: 0.9em;
+    font-size: var(--font-step--1);
     color: var(--color-hover);
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem;
 }
 
 .main__section-item-list {
     margin: 0;
-    padding-left: 1.2rem;
+    padding-left: 1.25rem;
+    line-height: 1.5;
 }
 
 .main__section-item-bullet {
-    margin-bottom: 0.3rem;
+    margin: 0.4rem 0;
+    hanging-punctuation: first;
 }
 
-/* Footer */
+/* ===========================
+   Footer
+   =========================== */
 .footer__title {
     margin-bottom: 10px;
 }
@@ -112,7 +154,7 @@ body {
     width: 40px;
     height: 40px;
     filter: grayscale(100%);
-    transition: all 0.3s;
+    transition: transform 0.3s, filter 0.3s;
 }
 
 .footer__icon:hover {
@@ -130,7 +172,7 @@ body {
     color: var(--color-primario);
     text-decoration: none;
     border-bottom: 1px dashed var(--color-primario);
-    transition: all 0.3s;
+    transition: color 0.3s, border-color 0.3s;
 }
 
 .footer__link:hover {
@@ -138,7 +180,54 @@ body {
     border-color: var(--color-hover);
 }
 
-/* Responsive */
+/* Texto alternativo de contacto (oculto en pantalla, visible al imprimir) */
+.contact-text {
+    display: none;
+    margin-left: 5px;
+}
+
+/* ===========================
+   Accesibilidad (focus)
+   =========================== */
+a:focus-visible,
+button:focus-visible,
+.footer__link:focus-visible,
+.main__section-item-title:focus-visible {
+    outline: 2px dashed var(--color-hover);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* ===========================
+   Preferencias del usuario
+   =========================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primario: #e5e7eb;
+        --color-hover: #9ca3af;
+        --color-fondo-inicio: #0f172a;
+        --color-fondo-fin: #1f2937;
+    }
+
+    .container {
+        background: rgba(17, 24, 39, 0.85);
+    }
+
+    .footer__icon {
+        filter: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* ===========================
+   Responsive
+   =========================== */
 @media (max-width: 480px) {
     .container {
         padding: 20px 10px;
@@ -158,6 +247,7 @@ body {
         font-size: 1.5em;
     }
 
+    /* reserva para móviles */
     .main__section-title {
         font-size: 1.3em;
     }
@@ -165,4 +255,95 @@ body {
     .main__section-item-title {
         font-size: 1em;
     }
+}
+
+/* ===========================
+   Impresión (CV listo para imprimir)
+   =========================== */
+@media print {
+
+    /* Ocultar el botón */
+    .button {
+        display: none !important;
+    }
+
+    /* Fondo y contenedor limpios para imprimir */
+    body {
+        background: #fff !important;
+        display: block;
+    }
+
+    .container {
+        background: #fff !important;
+        box-shadow: none !important;
+        max-width: 100%;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .header__photo {
+        border: none;
+    }
+
+    /* Ocultar solo los iconos */
+    .footer__icon {
+        display: none !important;
+    }
+
+    /* Mostrar textos de contacto como lista alineada a la izquierda */
+    .footer__contact-links {
+        display: block !important;
+        list-style-type: disc;
+        padding-left: 20px;
+        margin: 10px 0;
+        text-align: left !important;
+        /* fuerza alineación a la izquierda */
+    }
+
+    .footer__contact-links a {
+        display: list-item;
+        list-style-type: disc;
+        margin: 4px 0;
+        text-decoration: none;
+        color: #000;
+        font-size: 0.95em;
+    }
+
+    .contact-text {
+        display: inline !important;
+        font-size: 0.9em;
+        color: #000;
+        margin-left: 4px;
+    }
+
+    /* Enlaces del copyright legibles */
+    .footer__link {
+        border: none;
+        text-decoration: underline;
+        color: #000;
+    }
+}
+
+/* Botón de descarga / impresión */
+.button {
+    display: inline-block;
+    padding: .6rem 1rem;
+    border: 1px solid var(--color-primario);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-primario);
+    background: transparent;
+    font-size: var(--font-step-0, 1rem);
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, color .15s;
+    margin-top: 15px;
+
+    margin-bottom: 25px;
+    /* margen extra para separar de la línea */
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-hover);
+    color: var(--color-hover);
 }
