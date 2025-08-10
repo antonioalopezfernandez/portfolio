@@ -50,13 +50,50 @@ body {
 }
 
 /* Main */
+.main__section {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--color-hover);
+    text-align: left;
+}
+
+.main__section:first-of-type {
+    border-top: none;
+}
+
 .main__section-title {
     font-size: 1.5em;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .main__section-text {
     text-align: justify;
+}
+
+/* Experiencia */
+.main__section-item {
+    margin-bottom: 1.5rem;
+}
+
+.main__section-item-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.main__section-item-meta {
+    font-size: 0.9em;
+    color: var(--color-hover);
+    margin-bottom: 0.5rem;
+}
+
+.main__section-item-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.main__section-item-bullet {
+    margin-bottom: 0.3rem;
 }
 
 /* Footer */
@@ -83,7 +120,6 @@ body {
     transform: scale(1.1);
 }
 
-
 .footer__copyright {
     font-size: 0.9em;
     color: var(--color-primario);
@@ -102,6 +138,7 @@ body {
     border-color: var(--color-hover);
 }
 
+/* Responsive */
 @media (max-width: 480px) {
     .container {
         padding: 20px 10px;
@@ -123,5 +160,9 @@ body {
 
     .main__section-title {
         font-size: 1.3em;
+    }
+
+    .main__section-item-title {
+        font-size: 1em;
     }
 }
