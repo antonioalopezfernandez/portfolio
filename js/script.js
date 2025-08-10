@@ -10,20 +10,8 @@
     if (printBtn) printBtn.addEventListener('click', printCV);
     if (printBtnMobile) printBtnMobile.addEventListener('click', printCV);
 
-    // Acordeones: abiertos por defecto en escritorio, colapsados en móvil
+    // Acordeones: cerrados por defecto en todas las resoluciones
     const accordions = Array.from(document.querySelectorAll('details[data-mobile-collapsible]'));
-    const setAccordionMode = () => {
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        accordions.forEach(d => {
-            if (isMobile) {
-                d.removeAttribute('open');
-            } else {
-                d.setAttribute('open', '');
-            }
-        });
-    };
-    setAccordionMode();
-    window.addEventListener('resize', setAccordionMode, { passive: true });
 
     // Mejoras de accesibilidad: teclado para summary
     accordions.forEach(d => {

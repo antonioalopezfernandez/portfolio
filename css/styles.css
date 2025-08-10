@@ -335,6 +335,13 @@ video {
     box-shadow: 0 6px 18px color-mix(in srgb, var(--color-primario) 6%, transparent);
 }
 
+/* Estilo para el span del título del acordeón */
+details summary span.main__section-item-title {
+    font-size: var(--font-step-0);
+    font-weight: 700;
+    margin: 0 0 .25rem;
+}
+
 /* Footer */
 .footer__title {
     margin: 10px 0;
@@ -381,8 +388,10 @@ video {
 
 /* Texto alternativo de contacto (oculto en pantalla, visible al imprimir) */
 .contact-text {
-    display: none;
-    margin-left: 5px;
+    display: inline !important;
+    font-size: .9em;
+    color: var(--color-primario);
+    margin-left: 4px;
 }
 
 /* Accesibilidad (focus) */
