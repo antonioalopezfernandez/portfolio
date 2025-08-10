@@ -7,6 +7,15 @@
     --color-fondo-inicio: #fff;
     --color-fondo-fin: #dfe7f1;
 
+    /* Nuevas variables de color para sustituir valores fijos */
+    --color-fondo-header: #004e92;
+    --color-fondo-header-secundario: #000428;
+    --color-badge-fondo: #eff6ff;
+    --color-badge-texto: #0b3b8a;
+    --color-check-bullet: #004e92;
+    --color-borde-claro: #eee;
+    --color-accesibilidad-outline: #6b7280;
+
     /* Tipografía fluida */
     --font-step--1: clamp(0.85rem, 0.78rem + 0.2vw, 0.95rem);
     --font-step-0: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
@@ -65,8 +74,8 @@ video {
     top: 16px;
     width: auto;
     height: auto;
-    background: #000;
-    color: #fff;
+    background: var(--color-primario);
+    color: var(--color-fondo-inicio);
     padding: 8px 12px;
     border-radius: 8px;
     z-index: 1000;
@@ -78,8 +87,8 @@ video {
     top: 0;
     z-index: 50;
     backdrop-filter: saturate(120%) blur(8px);
-    background: rgba(255, 255, 255, .75);
-    border-bottom: 1px solid rgba(0, 0, 0, .06);
+    background: color-mix(in srgb, var(--color-fondo-inicio) 75%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-primario) 6%, transparent);
 }
 
 .site-nav__inner {
@@ -95,8 +104,7 @@ video {
 .brand {
     font-weight: 800;
     text-decoration: none;
-    color: #0b3b8a;
-    background: linear-gradient(135deg, #004e92, #000428);
+    background: linear-gradient(135deg, var(--color-fondo-header), var(--color-fondo-header-secundario));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -114,14 +122,14 @@ video {
 
 .menu a {
     text-decoration: none;
-    color: #111;
+    color: var(--color-primario);
     padding: 6px 8px;
     border-radius: 8px;
 }
 
 .menu a:hover,
 .menu a:focus {
-    background: rgba(0, 0, 0, .06);
+    background: color-mix(in srgb, var(--color-primario) 6%, transparent);
 }
 
 /* CTA small */
@@ -131,18 +139,18 @@ video {
     border: none;
     border-radius: 10px;
     text-decoration: none;
-    color: #fff;
-    background: #ff6600;
+    color: var(--color-fondo-inicio);
+    background: var(--color-primario);
     font-weight: 700;
     font-size: var(--font-step-0);
     cursor: pointer;
     transition: transform .15s, filter .15s, opacity .15s;
-    box-shadow: 0 8px 18px rgba(255, 102, 0, .25);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--color-primario) 25%, transparent);
 }
 
 .button:hover {
     transform: translateY(-1px);
-    filter: brightness(.95);
+    filter: brightness(1.2);
 }
 
 .button:active {
@@ -165,16 +173,16 @@ video {
     width: 100%;
     margin: 16px auto;
     padding: 20px;
-    background: rgba(255, 255, 255, .86);
+    background: color-mix(in srgb, var(--color-fondo-inicio) 86%, transparent);
     text-align: center;
     border-radius: 14px;
-    box-shadow: 0 12px 34px rgba(0, 0, 0, .08);
+    box-shadow: 0 12px 34px color-mix(in srgb, var(--color-primario) 8%, transparent);
 }
 
 /* Header visual */
 .header {
-    background: linear-gradient(135deg, #004e92, #000428);
-    color: #fff;
+    background: linear-gradient(135deg, var(--color-fondo-header), var(--color-fondo-header-secundario));
+    color: var(--color-fondo-inicio);
     padding: 2.2rem 1.2rem 1.8rem;
     border-radius: 12px;
     text-align: center;
@@ -186,7 +194,7 @@ video {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(60% 60% at 80% -10%, rgba(255, 255, 255, .18), transparent 60%);
+    background: radial-gradient(60% 60% at 80% -10%, color-mix(in srgb, var(--color-fondo-inicio) 18%, transparent), transparent 60%);
     pointer-events: none;
 }
 
@@ -196,20 +204,20 @@ video {
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto 15px;
-    border: 3px solid rgba(255, 255, 255, .9);
+    border: 3px solid color-mix(in srgb, var(--color-fondo-inicio) 90%, transparent);
     transition: transform .3s, border-color .3s;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, .25);
+    box-shadow: 0 10px 26px color-mix(in srgb, var(--color-primario) 25%, transparent);
 }
 
 .header__photo:hover {
-    border-color: #e5e7eb;
+    border-color: var(--color-fondo-fin);
     transform: scale(1.06);
 }
 
 .header__name {
     margin: 0;
     font-size: var(--font-step-2);
-    color: #fff;
+    color: var(--color-fondo-inicio);
 }
 
 .header__role {
@@ -220,7 +228,7 @@ video {
 /* Main / Secciones */
 .main__section {
     padding: 1.5rem 0;
-    border-top: 1px solid rgba(0, 0, 0, .08);
+    border-top: 1px solid color-mix(in srgb, var(--color-primario) 8%, transparent);
     text-align: left;
 }
 
@@ -242,7 +250,7 @@ video {
 
 /* Alternancia visual */
 .main__section:nth-of-type(even) {
-    background-color: rgba(240, 244, 248, .85);
+    background-color: color-mix(in srgb, var(--color-fondo-fin) 85%, transparent);
     border-radius: 10px;
     padding: 1.75rem 1.25rem;
     border-top-color: transparent;
@@ -260,8 +268,8 @@ video {
 .badge {
     padding: .25rem .5rem;
     border-radius: 999px;
-    background: #eff6ff;
-    color: #0b3b8a;
+    background: var(--color-badge-fondo);
+    color: var(--color-badge-texto);
     font-weight: 700;
     font-size: .85em;
 }
@@ -287,7 +295,7 @@ video {
     top: 0;
     line-height: 1.35;
     font-weight: 700;
-    color: #004e92;
+    color: var(--color-check-bullet);
 }
 
 .main__section-item-title {
@@ -305,10 +313,10 @@ video {
 /* Acordeón */
 .accordion {
     padding: .75rem 1rem;
-    border: 1px solid #eee;
+    border: 1px solid var(--color-borde-claro);
     border-radius: 12px;
     margin-bottom: .75rem;
-    background: #fff;
+    background: var(--color-fondo-inicio);
 }
 
 .accordion>summary {
@@ -324,7 +332,7 @@ video {
 }
 
 .accordion[open] {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--color-primario) 6%, transparent);
 }
 
 /* Footer */
@@ -367,8 +375,8 @@ video {
 }
 
 .footer__link:hover {
-    color: #111;
-    border-color: #111;
+    color: var(--color-hover);
+    border-color: var(--color-hover);
 }
 
 /* Texto alternativo de contacto (oculto en pantalla, visible al imprimir) */
@@ -382,7 +390,7 @@ a:focus-visible,
 button:focus-visible,
 .footer__link:focus-visible,
 .main__section-item-title:focus-visible {
-    outline: 2px dashed #6b7280;
+    outline: 2px dashed var(--color-accesibilidad-outline);
     outline-offset: 4px;
     border-radius: 4px;
 }
@@ -397,8 +405,8 @@ button:focus-visible,
     }
 
     .container {
-        background: rgba(17, 24, 39, .85);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+        background: color-mix(in srgb, var(--color-fondo-inicio) 85%, transparent);
+        box-shadow: 0 16px 40px color-mix(in srgb, var(--color-primario) 45%, transparent);
     }
 
     .footer__icon {
@@ -406,21 +414,21 @@ button:focus-visible,
     }
 
     .main__section:nth-of-type(even) {
-        background-color: rgba(31, 41, 55, .7);
+        background-color: color-mix(in srgb, var(--color-fondo-fin) 70%, transparent);
     }
 
     .site-nav {
-        background: rgba(15, 23, 42, .75);
-        border-bottom: 1px solid rgba(255, 255, 255, .06);
+        background: color-mix(in srgb, var(--color-fondo-inicio) 75%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, var(--color-primario) 6%, transparent);
     }
 
     .menu a {
-        color: #e5e7eb;
+        color: var(--color-primario);
     }
 
     .menu a:hover,
     .menu a:focus {
-        background: rgba(255, 255, 255, .08);
+        background: color-mix(in srgb, var(--color-primario) 8%, transparent);
     }
 }
 
@@ -443,7 +451,7 @@ button:focus-visible,
         right: 0;
         width: 100%;
         border-radius: 0;
-        box-shadow: 0 -2px 8px rgba(0, 0, 0, .1);
+        box-shadow: 0 -2px 8px color-mix(in srgb, var(--color-primario) 10%, transparent);
         z-index: 100;
     }
 }
@@ -486,12 +494,10 @@ button:focus-visible,
         align-items: center;
         gap: 10px;
         padding: 12px;
-        border: 1px solid #e5e7eb;
+        border: 1px solid var(--color-fondo-fin);
         border-radius: 12px;
-        background: #fff;
+        background: var(--color-fondo-inicio);
     }
-
-    /* Por defecto, colapsar acordeones en móviles; apertura se gestiona por atributo en HTML/JS */
 }
 
 /* Impresión (CV) */
@@ -504,12 +510,12 @@ button:focus-visible,
     }
 
     body {
-        background: #fff !important;
+        background: var(--color-fondo-inicio) !important;
         display: block;
     }
 
     .container {
-        background: #fff !important;
+        background: var(--color-fondo-inicio) !important;
         box-shadow: none !important;
         max-width: 100%;
         padding: 0;
@@ -517,8 +523,8 @@ button:focus-visible,
     }
 
     .header {
-        background: #fff !important;
-        color: #000 !important;
+        background: var(--color-fondo-inicio) !important;
+        color: var(--color-primario) !important;
         overflow: visible !important;
         padding: 0 0 12px !important;
         border-radius: 0 !important;
@@ -562,21 +568,21 @@ button:focus-visible,
         list-style-type: disc;
         margin: 4px 0;
         text-decoration: none;
-        color: #000;
+        color: var(--color-primario);
         font-size: .95em;
     }
 
     .contact-text {
         display: inline !important;
         font-size: .9em;
-        color: #000;
+        color: var(--color-primario);
         margin-left: 4px;
     }
 
     .footer__link {
         border: none;
         text-decoration: underline;
-        color: #000;
+        color: var(--color-primario);
     }
 }
 
