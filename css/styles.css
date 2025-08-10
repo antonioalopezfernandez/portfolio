@@ -432,3 +432,82 @@ button:focus-visible,
         page-break-inside: avoid;
     }
 }
+
+/* ==== Mejoras móvil añadidas ==== */
+
+/* 2.1 CTA pegajoso en móviles */
+@media (max-width: 768px) {
+    .button {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+}
+
+/* 2.2 Acordeones accesibles para listas largas */
+details {
+    padding: .75rem 1rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: .75rem;
+    background: #fff;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 700;
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 2.3 Footer táctil en móviles */
+@media (max-width: 480px) {
+    .footer__contact-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .footer__contact-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #fff;
+    }
+
+    .footer__icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* 2.4 Espaciado y legibilidad en pantallas pequeñas */
+@media (max-width: 480px) {
+    .main__section {
+        padding: 1rem .75rem;
+    }
+
+    body {
+        line-height: 1.75;
+    }
+
+    .main__section-item {
+        margin-bottom: 1rem;
+    }
+
+    .main__section-item-bullet {
+        margin: .3rem 0;
+    }
+}
