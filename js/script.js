@@ -23,4 +23,22 @@
             s.setAttribute('aria-expanded', d.open ? 'true' : 'false');
         });
     });
+
+    // Lógica para el menú de hamburguesa
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navMenu = document.querySelector('.site-nav nav');
+
+    hamburgerMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+
+    // Cierra el menú al hacer clic en un enlace (en móvil)
+    const navLinks = document.querySelectorAll('.menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    });
 })();
