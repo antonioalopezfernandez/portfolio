@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Antonio López Fernández | Portfolio</title>
 
+    <!-- Metadatos Open Graph -->
     <meta property="og:title" content="Antonio López Fernández | Portfolio" />
     <meta property="og:description" content="Administrador de sistemas con 10+ años de experiencia. Portfolio y CV." />
     <meta property="og:type" content="website" />
@@ -13,18 +15,19 @@
     <meta property="og:url" content="https://antonioalopezfernandez.onrender.com/" />
     <meta property="og:image" content="https://antonioalopezfernandez.onrender.com/img/profile.png" />
 
+    <!-- Metadatos Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Antonio López Fernández | Portfolio" />
     <meta name="twitter:description" content="Administrador de sistemas con 10+ años de experiencia. Portfolio y CV." />
     <meta name="twitter:image" content="https://antonioalopezfernandez.onrender.com/img/profile.png" />
 
+    <!-- Estilos -->
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnometerminal.svg"
         type="image/svg+xml" />
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- JavaScript -->
     <script src="js/script.js" defer></script>
 </head>
 
@@ -32,6 +35,7 @@
     <div class="container" id="top">
         <a href="#main" class="skip-link">Saltar al contenido</a>
 
+        <!-- Menú superior anclado -->
         <header class="site-nav" role="navigation" aria-label="Navegación principal">
             <div class="site-nav__inner">
                 <a href="#top" class="brand" aria-label="Ir al inicio">Antonio</a>
@@ -56,6 +60,7 @@
             </div>
         </header>
 
+        <!-- Cabecera -->
         <section class="header" role="banner">
             <img src="img/profile.png" alt="Foto de Antonio López Fernández" class="header__photo" loading="lazy"
                 decoding="async">
@@ -64,6 +69,7 @@
         </section>
 
         <main id="main" class="main" tabindex="-1">
+            <!-- Acerca de mí -->
             <section id="acerca" class="main__section">
                 <h2 class="main__section-title">Acerca de mí</h2>
                 <p class="main__section-text">
@@ -81,10 +87,11 @@
                 </div>
             </section>
 
+            <!-- Experiencia -->
             <section id="experiencia" class="main__section" aria-label="Experiencia profesional">
                 <h2 class="main__section-title">Experiencia</h2>
 
-                <details class="accordion" data-mobile-collapsible>
+                <details class="accordion" data-mobile-collapsible open>
                     <summary>
                         <span class="main__section-item-title">Analista de proyectos — Tragsatec</span>
                         <p class="main__section-item-meta">octubre de 2023 – Presente · Santander, Cantabria, España</p>
@@ -295,6 +302,7 @@
                 </details>
             </section>
 
+            <!-- Educación -->
             <section id="educacion" class="main__section">
                 <h2 class="main__section-title">Educación</h2>
                 <div class="main__section-item">
@@ -318,6 +326,7 @@
                 </div>
             </section>
 
+            <!-- Certificaciones -->
             <section id="certificaciones" class="main__section">
                 <h2 class="main__section-title">Certificaciones</h2>
                 <ul class="main__section-item-list">
@@ -351,6 +360,7 @@
                 </ul>
             </section>
 
+            <!-- Habilidades -->
             <section id="habilidades" class="main__section">
                 <h2 class="main__section-title">Habilidades</h2>
                 <ul class="main__section-item-list">
@@ -364,6 +374,7 @@
                 </ul>
             </section>
 
+            <!-- Idiomas -->
             <section id="idiomas" class="main__section">
                 <h2 class="main__section-title">Idiomas</h2>
                 <ul class="main__section-item-list">
@@ -373,6 +384,7 @@
             </section>
         </main>
 
+        <!-- Footer -->
         <footer id="contacto" class="footer" role="contentinfo">
             <h2 class="footer__title">Contacto</h2>
             <div class="footer__contact-links" aria-label="Redes y contacto">

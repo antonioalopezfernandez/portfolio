@@ -23,17 +23,19 @@
     --font-step-2: clamp(1.8rem, 1.3rem + 2vw, 2.4rem);
 }
 
-/* Reset suave + box sizing coherente */
+/* Fundamentos: reset suave y box-sizing coherente */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* Base */
+/* Configuración base del documento */
 html {
     scroll-behavior: smooth;
 }
+
+/* Lienzo general: tipografía, color y fondo, y layout central */
 
 body {
     font-family: 'Inter', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
@@ -51,6 +53,8 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Medios fluidos: que no desborden su contenedor */
+
 img,
 svg,
 video {
@@ -58,7 +62,7 @@ video {
     display: block;
 }
 
-/* Skip link */
+/* Accesibilidad: enlace para saltar al contenido */
 .skip-link {
     position: absolute;
     left: -9999px;
@@ -81,7 +85,7 @@ video {
     z-index: 1000;
 }
 
-/* Top navigation */
+/* Navegación superior (sticky) */
 .site-nav {
     position: sticky;
     top: 0;
@@ -90,6 +94,8 @@ video {
     background: color-mix(in srgb, var(--color-fondo-inicio) 75%, transparent);
     border-bottom: 1px solid color-mix(in srgb, var(--color-primario) 6%, transparent);
 }
+
+/* Contenedor interno de la navegación (alineación y espaciado) */
 
 .site-nav__inner {
     max-width: 980px;
@@ -100,6 +106,8 @@ video {
     gap: 16px;
     justify-content: space-between;
 }
+
+/* Marca: tratamiento de texto con degradado */
 
 .brand {
     font-weight: 800;
@@ -132,7 +140,7 @@ video {
     background: color-mix(in srgb, var(--color-primario) 6%, transparent);
 }
 
-/* CTA small */
+/* Botones y llamadas a la acción */
 .button {
     display: inline-block;
     padding: .6rem .95rem;
@@ -167,7 +175,7 @@ video {
     margin: 18px auto 28px;
 }
 
-/* Contenedor */
+/* Tarjeta/contenedor principal de contenido */
 .container {
     max-width: 860px;
     width: 100%;
@@ -179,7 +187,7 @@ video {
     box-shadow: 0 12px 34px color-mix(in srgb, var(--color-primario) 8%, transparent);
 }
 
-/* Header visual */
+/* Cabecera tipo hero con fondo degradado */
 .header {
     background: linear-gradient(135deg, var(--color-fondo-header), var(--color-fondo-header-secundario));
     color: var(--color-fondo-inicio);
@@ -198,6 +206,8 @@ video {
     pointer-events: none;
 }
 
+/* Avatar/foto destacada con realce */
+
 .header__photo {
     width: 150px;
     height: 150px;
@@ -214,18 +224,22 @@ video {
     transform: scale(1.06);
 }
 
+/* Nombre/título principal */
+
 .header__name {
     margin: 0;
     font-size: var(--font-step-2);
     color: var(--color-fondo-inicio);
 }
 
+/* Subtítulo/rol bajo el nombre */
+
 .header__role {
     margin: .35rem 0 0;
     opacity: .9;
 }
 
-/* Main / Secciones */
+/* Estructura del contenido principal */
 .main__section {
     padding: 1.5rem 0;
     border-top: 1px solid color-mix(in srgb, var(--color-primario) 8%, transparent);
@@ -236,6 +250,8 @@ video {
     border-top: none;
 }
 
+/* Títulos de sección */
+
 .main__section-title {
     font-size: var(--font-step-1);
     margin: 0 0 10px;
@@ -243,12 +259,14 @@ video {
     letter-spacing: .2px;
 }
 
+/* Párrafos con justificación cuidada */
+
 .main__section-text {
     text-align: justify;
     text-justify: inter-word;
 }
 
-/* Alternancia visual */
+/* Alternancia de fondo para mejorar lectura */
 .main__section:nth-of-type(even) {
     background-color: color-mix(in srgb, var(--color-fondo-fin) 85%, transparent);
     border-radius: 10px;
@@ -256,7 +274,7 @@ video {
     border-top-color: transparent;
 }
 
-/* Badges */
+/* Insignias/etiquetas destacadas */
 .badges {
     display: flex;
     gap: 8px;
@@ -264,6 +282,8 @@ video {
     margin-top: .75rem;
     justify-content: center;
 }
+
+/* Chips/badges con fondo suave */
 
 .badge {
     padding: .25rem .5rem;
@@ -274,12 +294,14 @@ video {
     font-size: .85em;
 }
 
-/* Listas */
+/* Listados con viñetas personalizadas */
 .main__section-item-list {
     margin: 0;
     padding-left: 1.25rem;
     line-height: 1.5;
 }
+
+/* Elemento de lista con check personalizado */
 
 .main__section-item-bullet {
     margin: .4rem 0;
@@ -298,11 +320,15 @@ video {
     color: var(--color-check-bullet);
 }
 
+/* Título resumido de cada ítem */
+
 .main__section-item-title {
     font-size: var(--font-step-0);
     font-weight: 700;
     margin: 0 0 .25rem;
 }
+
+/* Metadatos (fechas, ubicaciones, etc.) */
 
 .main__section-item-meta {
     font-size: var(--font-step--1);
@@ -310,7 +336,7 @@ video {
     margin: 0 0 .5rem;
 }
 
-/* Acordeón */
+/* Componente de acordeón para contenido colapsable */
 .accordion {
     padding: .75rem 1rem;
     border: 1px solid var(--color-borde-claro);
@@ -331,6 +357,8 @@ video {
     display: none;
 }
 
+/* Sombra suave al expandir el acordeón */
+
 .accordion[open] {
     box-shadow: 0 6px 18px color-mix(in srgb, var(--color-primario) 6%, transparent);
 }
@@ -342,11 +370,13 @@ details summary span.main__section-item-title {
     margin: 0 0 .25rem;
 }
 
-/* Footer */
+/* Pie de página y enlaces de contacto */
 .footer__title {
     margin: 10px 0;
     text-align: center;
 }
+
+/* Bloque de enlaces de contacto en el pie */
 
 .footer__contact-links {
     display: flex;
@@ -355,6 +385,8 @@ details summary span.main__section-item-title {
     margin-bottom: 15px;
     flex-wrap: wrap;
 }
+
+/* Iconos sociales con animación sutil */
 
 .footer__icon {
     width: 40px;
@@ -368,12 +400,16 @@ details summary span.main__section-item-title {
     transform: translateY(-2px) scale(1.06);
 }
 
+/* Línea legal del pie */
+
 .footer__copyright {
     font-size: .95em;
     color: var(--color-primario);
     margin: 20px 0 0;
     text-align: center;
 }
+
+/* Enlaces del pie con estilo de subrayado discontinuo */
 
 .footer__link {
     color: var(--color-primario);
@@ -386,7 +422,7 @@ details summary span.main__section-item-title {
     border-color: var(--color-hover);
 }
 
-/* Texto alternativo de contacto (oculto en pantalla, visible al imprimir) */
+/* Texto alternativo de contacto (se muestra al imprimir) */
 .contact-text {
     display: inline !important;
     font-size: .9em;
@@ -394,7 +430,7 @@ details summary span.main__section-item-title {
     margin-left: 4px;
 }
 
-/* Accesibilidad (focus) */
+/* Estados de enfoque (focus) accesibles */
 a:focus-visible,
 button:focus-visible,
 .footer__link:focus-visible,
@@ -404,7 +440,7 @@ button:focus-visible,
     border-radius: 4px;
 }
 
-/* Preferencias del usuario */
+/* Preferencias del usuario (modo oscuro) */
 @media (prefers-color-scheme: dark) {
     :root {
         --color-primario: #e5e7eb;
@@ -441,7 +477,7 @@ button:focus-visible,
     }
 }
 
-/* Reducir movimiento */
+/* Respeto a reduc. de movimiento */
 @media (prefers-reduced-motion: reduce) {
     * {
         transition: none !important;
@@ -450,7 +486,7 @@ button:focus-visible,
     }
 }
 
-/* Responsive */
+/* Adaptaciones responsivas */
 @media (max-width: 768px) {
     .button--mobile {
         display: block;
@@ -464,6 +500,8 @@ button:focus-visible,
         z-index: 100;
     }
 }
+
+/* Ajustes para móviles pequeños */
 
 @media (max-width: 480px) {
     .container {
@@ -509,7 +547,7 @@ button:focus-visible,
     }
 }
 
-/* Impresión (CV) */
+/* Estilos para impresión del CV */
 @media print {
 
     .site-nav,
@@ -595,7 +633,7 @@ button:focus-visible,
     }
 }
 
-/* Ligero realce al pasar títulos por el viewport */
+/* Mejora de lectura: margen de scroll cuando hay título + párrafo */
 @supports selector(:has(+ *)) {
     .main__section-title:has(+ p) {
         scroll-margin-top: 80px;
@@ -604,7 +642,7 @@ button:focus-visible,
 
 /* --- Menú de Hamburguesa --- */
 
-/* Esconde el menú de navegación en móvil por defecto */
+/* Menú móvil: oculto por defecto fuera de vista */
 @media (max-width: 768px) {
     .site-nav nav {
         position: absolute;
@@ -641,7 +679,7 @@ button:focus-visible,
     }
 }
 
-/* Oculta el menú de navegación en pantallas más pequeñas */
+/* Ajustes de layout para navegación en pantallas pequeñas */
 @media (max-width: 768px) {
     .site-nav__inner {
         padding: .6rem 1rem;
@@ -651,7 +689,7 @@ button:focus-visible,
     }
 }
 
-/* Estilos del icono de la hamburguesa */
+/* Icono/btn del menú hamburguesa */
 .hamburger-menu {
     display: none;
     cursor: pointer;
@@ -678,7 +716,39 @@ button:focus-visible,
     }
 }
 
-/* Para evitar el doble scroll y la interacción con el fondo */
+/* Evita scroll de fondo cuando el menú está abierto */
 .menu-open {
     overflow: hidden;
+}
+
+/* Acordeón: indicador visual de estado (+/x) */
+/* 1. Hacemos espacio para el indicador en el contenedor del título */
+.accordion>summary {
+    position: relative;
+    /* Necesario para posicionar el '+' */
+    padding-right: 2.5rem;
+    /* Espacio a la derecha para que no se monte con el texto */
+}
+
+/* 2. Creamos y posicionamos el indicador con un pseudo-elemento */
+.accordion>summary::after {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    font-size: 1.8rem;
+    /* Tamaño del símbolo */
+    font-weight: 300;
+    /* Un grosor más fino queda elegante */
+    color: var(--color-check-bullet);
+    /* Reutilizamos un color que ya tienes definido */
+
+    /* Centrado vertical y animación */
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* 3. Giramos el '+' para convertirlo en una 'x' cuando el acordeón está abierto */
+.accordion[open]>summary::after {
+    transform: translateY(-50%) rotate(45deg);
 }
