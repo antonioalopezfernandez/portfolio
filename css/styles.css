@@ -376,6 +376,46 @@ details summary span.main__section-item-title {
     text-align: center;
 }
 
+/* Estilos para el formulario */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#contact label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#contact button {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #555;
+}
+
 /* Bloque de enlaces de contacto en el pie */
 
 .footer__contact-links {
