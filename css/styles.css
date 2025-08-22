@@ -377,7 +377,7 @@ details summary span.main__section-item-title {
 }
 
 /* Estilos para el formulario */
-#contact form {
+.footer__contact-form form {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -385,13 +385,13 @@ details summary span.main__section-item-title {
     margin: 20px auto;
 }
 
-#contact label {
+.footer__contact-form label {
     margin-top: 10px;
     font-weight: bold;
 }
 
-#contact input,
-#contact textarea {
+.footer__contact-form input,
+.footer__contact-form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -400,7 +400,7 @@ details summary span.main__section-item-title {
     font-size: 1rem;
 }
 
-#contact button {
+.footer__contact-form button {
     background-color: #333;
     color: white;
     padding: 12px;
@@ -412,7 +412,7 @@ details summary span.main__section-item-title {
     transition: background-color 0.3s ease;
 }
 
-#contact button:hover {
+.footer__contact-form button:hover {
     background-color: #555;
 }
 
