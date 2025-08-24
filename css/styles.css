@@ -592,7 +592,8 @@ button:focus-visible,
 
     .site-nav,
     .button,
-    .button--mobile {
+    .button--mobile,
+    .footer__contact-form {
         display: none !important;
     }
 
